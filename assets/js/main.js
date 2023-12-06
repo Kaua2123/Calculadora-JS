@@ -11,25 +11,6 @@
     const btnMultiplicar = document.querySelector('.btnMultiplicar');
     const btnLimpar = document.querySelector('.btnLimpar');
 
-    let operador;
-  
-    const calculadora = (operador, total = 0, ...numeros) => { //Factory Function
-        return {
-            operador,
-            get calcula(){
-                for(let numero of numeros) {
-                    if (this.operador === '+') total += numero;
-                    if (this.operador === '-') total -= numero;
-                    if (this.operador === '/') total /= numero;
-                    if (this.operador === '*') total *= numero;
-                }
-                
-                return resultado.innerText = total;
-            }
-        }
-    }
-
-    
     document.addEventListener('click', function(e) {
         const el = e.target;
 
@@ -40,6 +21,7 @@
 
     const doBotaoParaInput = (texto) => {
         inputCalculadora.value += texto;
+        inputCalculadora.focus();
     }
 
     btnSomar.addEventListener('click', function(e) {
